@@ -14,14 +14,14 @@ hg_command = '/usr/local/Cellar/python/2.7/bin/hg'
 #                Example: ["git://github.com/sjl/gundo.vim.git"],
 #                ---
 #                You can supply 'true' to instruct at the end of the array
-#                to leave the .git folder in place (to pull/commit things) 
+#                to leave the .git folder in place (to pull/commit things)
 #  - mercurial : an hg plugin. Probably bitbucket.org?
 #                Example: ["hg://bitbucket.org/ns9tks/vim-fuzzyfinder"],
 #  - vim       : a vim.org hosted plugin.
 #                Example: ["vim://align-294",        "10110"],
 #                ---
 #                The first string is the name of the plugin.
-#                The second string corresponds to the # (URL?src_id) you see 
+#                The second string corresponds to the # (URL?src_id) you see
 #                for the specific version you wanna download. For instance:
 #
 #                For the script: http://www.vim.org/scripts/script.php?script_id=30
@@ -33,18 +33,21 @@ hg_command = '/usr/local/Cellar/python/2.7/bin/hg'
 #   to do any post cleanup/install action.. The directory you are currently in
 #   is the bundle/<name> (that you provided here).
 #
-bundles = [ 
-	["git://github.com/sjl/gundo.vim.git"],
+bundles = [
+  ["hg://bitbucket.org/ns9tks/vim-l9/"],
+  ["git://github.com/sjl/gundo.vim.git"],
   ["git://github.com/scrooloose/nerdcommenter.git"],
+  ["git://github.com/scrooloose/nerdtree"],
   #["git://github.com/motemen/git-vim"],
   ["git://github.com/sukima/xmledit"],
   ["git://github.com/vim-scripts/taglist.vim"],
-  ["git://github.com/dsummersl/lookupfile-grep.git", true],
-  ["git://github.com/dsummersl/vimplugin-macromatches.git", true],
-  ["git://github.com/dsummersl/wikia-csv.git", true],
-  ["git://github.com/dsummersl/vimunit.git", true],
-  ["git://github.com/dsummersl/vim-fugitive",true],
-  ["git://github.com/dsummersl/fuzzyfinder_textmate",true],
+  ["https://github.com/mileszs/ack.vim"],
+  #["git://github.com/dsummersl/lookupfile-grep.git", true],
+  #["git://github.com/dsummersl/vimplugin-macromatches.git", true],
+  #["git://github.com/dsummersl/wikia-csv.git", true],
+  #["git://github.com/dsummersl/vimunit.git", true],
+  #["git://github.com/dsummersl/vim-fugitive",true],
+  #["git://github.com/dsummersl/fuzzyfinder_textmate",true],
   ["hg://bitbucket.org/ns9tks/vim-fuzzyfinder"],
   ["vim://cecutil-1066",        "7618"],
   ["vim://vimball-1502",        "11981"],
@@ -82,6 +85,7 @@ require 'open-uri'
 
 bundles_dir = File.join(File.dirname(__FILE__), "bundle")
 
+FileUtils.mkdir(bundles_dir) unless Dir.exists? bundles_dir
 FileUtils.cd(bundles_dir)
 
 trash = ARGV.include?('--trash')
