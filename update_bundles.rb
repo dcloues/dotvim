@@ -38,6 +38,7 @@ bundles = [
   ["git://github.com/sjl/gundo.vim.git"],
   ["git://github.com/scrooloose/nerdcommenter.git"],
   ["git://github.com/scrooloose/nerdtree"],
+  ["git://github.com/mileszs/ack.vim"],
   #["git://github.com/motemen/git-vim"],
   ["git://github.com/sukima/xmledit"],
   ["git://github.com/vim-scripts/taglist.vim"],
