@@ -4,7 +4,7 @@
 
 vim_command = '/usr/bin/vim'
 git_command = 'git'
-hg_command = '/usr/local/Cellar/python/2.7/bin/hg'
+hg_command = 'hg'
 
 # Git Plugins
 # Each plugin can be configured thusly:
